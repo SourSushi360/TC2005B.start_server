@@ -6,6 +6,6 @@ const nearbyyController = require('../controllers/nearbyyController');
 
 router.post('/', chatController.getResponseChat);
 router.post('/gemini', geminiController.getResponseChatGemini);
-router.post('/nearbyy', nearbyyController.getResponseNearbyy);
+router.post('/nearbyy', nearbyyController.getContextResponse);
 
 module.exports = router;
