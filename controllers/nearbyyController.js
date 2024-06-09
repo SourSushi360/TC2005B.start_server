@@ -26,10 +26,9 @@ async function getContextResponse(req, res) {
 
         const ctxMsg = context.data.items.map((item) => item.text).join('\n\n');
 
-        // Define additional context that Gemini can handle
-        const additionalContext = "You are a knowledgeable assistant capable of answering questions about various topics.";
+        
+        const additionalContext = "Eres un cocinero experto. Solo puedes contestar preguntas relacionadas a cocinar o nutrientes.";
 
-        // Create the full prompt with context and user query
         const fullPrompt = `${additionalContext}\n\nContext:\n${ctxMsg}\n\nUser Query: ${prompt}`;
 
         const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
